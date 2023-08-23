@@ -2,6 +2,7 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
+import com.furkankamaci.airport.FlightSearchApi.Entity.SearchResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public interface  ISearchService {
 
-    List<Flight> findFlights(Search search);
-    List<Flight> findOneWayFlights(Search search);
+    SearchResult findFlights(Search search);
+    SearchResult findOneWayFlights(Search search);
+    SearchResult findTwoWayFlights(Search search);
 }

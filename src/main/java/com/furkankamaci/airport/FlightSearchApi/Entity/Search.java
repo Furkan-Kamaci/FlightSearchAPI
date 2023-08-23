@@ -19,4 +19,14 @@ public class Search {
     private Date departureDate;
     private Date returnDate;
 
+
+   public void reverse(){
+        String temp = new String(this.departureAirportID);
+        this.departureAirportID = this.arrivalAirportID;
+        this.arrivalAirportID = temp;
+
+        this.departureDate = this.returnDate;
+        this.returnDate = null;
+    }
+
 }
