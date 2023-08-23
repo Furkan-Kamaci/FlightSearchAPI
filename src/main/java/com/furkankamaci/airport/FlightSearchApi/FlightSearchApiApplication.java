@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-//@EnableJpaRepositories(basePackages = "com.furkankamaci.airport.FlightSearchApi.DataAccess")
 public class FlightSearchApiApplication {
 
 	public static void main(String[] args) {
