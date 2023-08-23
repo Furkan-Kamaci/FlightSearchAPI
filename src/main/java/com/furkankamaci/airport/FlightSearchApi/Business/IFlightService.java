@@ -5,11 +5,12 @@ import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public interface IFlightService {
 
-    List<Flight> findAll();
+    CompletableFuture<List<Flight>> findAll();
 
     Flight addFlight(Flight flight);
 
