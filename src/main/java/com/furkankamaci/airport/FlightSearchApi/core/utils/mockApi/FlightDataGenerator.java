@@ -14,22 +14,23 @@ import java.util.List;
 public class FlightDataGenerator {
 
 
-
-    public static List<Flight> getRandomFlights(){
-
+    public static List<Flight> getRandomFlights() {
 
         List<Flight> flights = new ArrayList<>();
 
-//        flights.add(new)
+        int i = 0;
+        while (i < 3) {
+            flights.add(FlightDataGenerator.getRandomFlight());
+            i++;
+        }
 
-        return  flights;
+        return flights;
     }
 
-    public static Flight getRandomFlight(){
+    public static Flight getRandomFlight() {
         ArrayList<String> airportCodes = new ArrayList<>();
 
         {
-
             airportCodes.add("LAX");
             airportCodes.add("JFK");
             airportCodes.add("LHR");
@@ -51,25 +52,26 @@ public class FlightDataGenerator {
             airportCodes.add("IST");
             airportCodes.add("MEX");
         }
+
         Flight flight = new Flight();
 
 
         flight.setDepartureAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(19)));
         flight.setArrivalAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(20)));
-        while(flight.getDepartureAirportID()==flight.getArrivalAirportID()){
+        while (flight.getDepartureAirportID() == flight.getArrivalAirportID()) {
             flight.setArrivalAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(20)));
         }
 
-        flight.setDepartureDate( RandomDate.setRandomDepartureDateWithinNextWeek());
-        flight.setReturnDate( RandomDate.setRandomDepartureDateWithinNextWeek());
-        while(!flight.getDepartureDate().before(flight.getReturnDate())){
-            flight.setReturnDate( RandomDate.setRandomDepartureDateWithinNextWeek());
+        flight.setDepartureDate(RandomDate.setRandomDepartureDateWithinNextWeek());
+        flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
+        while (!flight.getDepartureDate().before(flight.getReturnDate())) {
+            flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
         }
 
         flight.setDepartureHour(RandomTime.randomTime());
         flight.setReturnHour(RandomTime.randomTime());
 
-        flight.setPrice(RandomPrice.getRandomPrice(9.99,99.99));
+        flight.setPrice(RandomPrice.getRandomPrice(9.99, 99.99));
 
         System.out.println(flight);
 
