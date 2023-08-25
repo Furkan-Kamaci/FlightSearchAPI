@@ -16,7 +16,7 @@ public class FlightDataUpdater {
     IFlightService flightService;
 
     //    @Scheduled(cron= "0 0 0 * * *") // hergun gece yarisinda
-    @Scheduled(cron = "*/1 * * * * *") // her saniye
+    @Scheduled(cron = "*/5 * * * * *") // her saniye
     public void updateFlightData() {
         System.out.println("new flights added..");
 
@@ -24,7 +24,7 @@ public class FlightDataUpdater {
         System.out.println(newData);
         for (Flight f : newData) {
             try {
-//                flightService.addFlight(f);
+                flightService.addFlight(f);
             } catch (Exception e) {
                 System.out.println(e);
             }
