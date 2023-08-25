@@ -9,22 +9,25 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+
 @RestController
 @RequestMapping("/api/flights")
 public class FlightController {
 
-    private IFlightService flightManager;
+
+    private final IFlightService flightManager;
 
     public FlightController(IFlightService flightService) {
         this.flightManager = flightService;
     }
 
 
+
     @GetMapping("/findAll")
     public List<Flight> findAll() {
         return flightManager.findAll();
-
     }
+
     @PostMapping("/addFlight")
     public Flight addFlight(@RequestBody Flight flight) {
         return flightManager.addFlight(flight);
