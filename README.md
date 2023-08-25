@@ -27,7 +27,7 @@ Follow these steps to set up and run the Spring Boot backend API on your local m
 1. **Clone the Repository**: Start by cloning this repository to your local machine:
 
 ```.sh
-https://github.com/Furkan-Kamaci/FlightSearchAPI.git
+git clone https://github.com/Furkan-Kamaci/FlightSearchAPI.git
 ```
 
 2. **Navigate to Project Directory**: Move into the cloned directory:
