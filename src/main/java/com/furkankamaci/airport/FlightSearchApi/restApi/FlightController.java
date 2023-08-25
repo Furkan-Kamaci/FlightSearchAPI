@@ -25,21 +25,6 @@ public class FlightController {
         return flightManager.findAll();
 
     }
-//    @GetMapping("/findAllSearch")
-//    public List<Flight> findAllSearch() {
-//
-//        CompletableFuture<List<Flight>> futureResult= flightManager.findAll();
-//        try {
-//            // Wait for the result of the asynchronous operation
-//            List<Flight> result = futureResult.get();
-//            // Now you can work with the result
-//            return result;
-//        } catch (InterruptedException | ExecutionException e) {
-//            // Handle exceptions if necessary
-//        }
-//        return Arrays.asList(new Flight());
-//    }
-
     @PostMapping("/addFlight")
     public Flight addFlight(@RequestBody Flight flight) {
         return flightManager.addFlight(flight);
