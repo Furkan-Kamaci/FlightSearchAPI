@@ -2,7 +2,6 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
-
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.springframework.stereotype.Service;

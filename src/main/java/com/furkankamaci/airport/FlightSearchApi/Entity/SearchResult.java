@@ -5,7 +5,6 @@ import java.util.List;
 
 public class SearchResult {
 
-
   private List<Flight> departureFlights;
   private List<Flight> returnFlights;
 
@@ -17,8 +16,8 @@ public class SearchResult {
   }
 
   public SearchResult(
-    List<Flight> departureFlights,
-    List<Flight> returnFlights
+          List<Flight> departureFlights,
+          List<Flight> returnFlights
   ) {
     this.departureFlights = departureFlights;
     this.returnFlights = returnFlights;

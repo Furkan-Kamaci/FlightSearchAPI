@@ -1,8 +1,5 @@
 package com.furkankamaci.airport.FlightSearchApi.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +16,6 @@ public class Search {
     private Date departureDate;
     private Date returnDate;
 
-
     public void reverse() {
         String temp = this.departureAirportID;
         this.departureAirportID = this.arrivalAirportID;
@@ -27,7 +23,6 @@ public class Search {
 
         this.departureDate = this.returnDate;
         this.returnDate = null;
-
 
 
     }

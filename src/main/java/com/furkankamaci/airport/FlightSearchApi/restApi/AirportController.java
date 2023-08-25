@@ -1,6 +1,5 @@
 package com.furkankamaci.airport.FlightSearchApi.restApi;
 
-
 import com.furkankamaci.airport.FlightSearchApi.Business.IAirportService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 import java.util.List;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/airports")
 public class AirportController {
-
 
   private IAirportService airportManager;
 

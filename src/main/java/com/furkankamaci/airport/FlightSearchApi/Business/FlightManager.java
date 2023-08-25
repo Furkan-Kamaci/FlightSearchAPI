@@ -2,13 +2,11 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 
 import com.furkankamaci.airport.FlightSearchApi.DataAccess.IFlightDal;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
-
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class FlightManager implements IFlightService {

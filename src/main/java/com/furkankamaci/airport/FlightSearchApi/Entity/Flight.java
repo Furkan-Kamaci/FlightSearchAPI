@@ -1,14 +1,11 @@
 package com.furkankamaci.airport.FlightSearchApi.Entity;
 
 import jakarta.persistence.*;
-
+import java.sql.Date;
+import java.sql.Time;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.sql.Date;
-import java.sql.Time;
-
 
 @Entity
 @Data
@@ -16,7 +13,6 @@ import java.sql.Time;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Flight {
-
 
   @Id
   @Column(name = "id")

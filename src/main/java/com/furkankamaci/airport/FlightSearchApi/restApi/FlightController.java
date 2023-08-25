@@ -4,24 +4,17 @@ import com.furkankamaci.airport.FlightSearchApi.Business.IFlightService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-
 
 @RestController
 @RequestMapping("/api/flights")
 public class FlightController {
-
 
     private final IFlightService flightManager;
 
     public FlightController(IFlightService flightService) {
         this.flightManager = flightService;
     }
-
-
 
     @GetMapping("/findAll")
     public List<Flight> findAll() {

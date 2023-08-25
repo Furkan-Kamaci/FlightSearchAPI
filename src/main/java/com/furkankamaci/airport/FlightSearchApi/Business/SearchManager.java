@@ -1,11 +1,9 @@
 package com.furkankamaci.airport.FlightSearchApi.Business;
 
-
 import com.furkankamaci.airport.FlightSearchApi.DataAccess.IFlightDal;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
 import com.furkankamaci.airport.FlightSearchApi.Entity.SearchResult;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SearchManager implements ISearchService {
-
 
   @Autowired
   private IFlightDal flightDal;
@@ -26,14 +23,14 @@ public class SearchManager implements ISearchService {
 
     SearchResult result = new SearchResult();
     result.setDepartureFlights(
-      this.findOneWayFlights(search).getDepartureFlights()
+            this.findOneWayFlights(search).getDepartureFlights()
     );
     System.out.println(search);
     search.reverse();
     System.out.println(search);
 
     result.setReturnFlights(
-      this.findOneWayFlights(search).getDepartureFlights()
+            this.findOneWayFlights(search).getDepartureFlights()
     );
 
     return result;
@@ -46,12 +43,12 @@ public class SearchManager implements ISearchService {
 
     for (Flight flight : allFlight) {
       if (
-        flight.getDepartureAirportID().equals(search.getDepartureAirportID()) &&
-        flight.getArrivalAirportID().equals(search.getArrivalAirportID()) &&
-        flight
-          .getDepartureDate()
-          .toString()
-          .equals(search.getDepartureDate().toString())
+              flight.getDepartureAirportID().equals(search.getDepartureAirportID()) &&
+                      flight.getArrivalAirportID().equals(search.getArrivalAirportID()) &&
+                      flight
+                              .getDepartureDate()
+                              .toString()
+                              .equals(search.getDepartureDate().toString())
       ) {
         System.out.println(flight.toString());
         result.add(flight);

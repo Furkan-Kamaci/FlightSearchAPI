@@ -1,7 +1,6 @@
 package com.furkankamaci.airport.FlightSearchApi.Business;
 
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
-
 import java.util.List;
 
 public interface IAirportService {

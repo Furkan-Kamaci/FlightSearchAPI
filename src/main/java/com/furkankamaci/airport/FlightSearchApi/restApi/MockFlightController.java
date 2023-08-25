@@ -27,14 +27,14 @@ public class MockFlightController {
     //
     //flights.add(f);
     Flight ff = new Flight(
-      1,
-      "JFK",
-      "LAX",
-      Date.valueOf("2023-2-4"),
-      Time.valueOf("08:00:00"),
-      null,
-      null,
-      250.0
+            1,
+            "JFK",
+            "LAX",
+            Date.valueOf("2023-2-4"),
+            Time.valueOf("08:00:00"),
+            null,
+            null,
+            250.0
     );
     //      boolean add = flights.add();
     flights.add(ff);

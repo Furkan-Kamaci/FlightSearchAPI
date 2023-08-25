@@ -3,7 +3,6 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
 import com.furkankamaci.airport.FlightSearchApi.Entity.SearchResult;
-
 import java.util.List;
 import org.springframework.stereotype.Service;
 
