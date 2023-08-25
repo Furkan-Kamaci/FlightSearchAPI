@@ -20,39 +20,12 @@ public class SearchManager implements ISearchService {
 
     @Override
     public SearchResult findFlights(Search search) {
-        if (search.getReturnDate() == null) {
-            return this.findOneWayFlights(search);
-        }
-
-        SearchResult result = new SearchResult();
-        result.setDepartureFlights(this.findOneWayFlights(search).getDepartureFlights());
-        System.out.println(search);
-        search.reverse();
-        System.out.println(search);
-
-        result.setReturnFlights(this.findOneWayFlights(search).getDepartureFlights());
-
-        return result;
     }
 
     @Override
     public SearchResult findOneWayFlights(Search search) {
-        List<Flight> result = new ArrayList<>();
-        List<Flight> allFlight = flightDal.findAll();
 
-        for (Flight flight : allFlight) {
-            if (flight.getDepartureAirportID().equals(search.getDepartureAirportID()) &&
-                    flight.getArrivalAirportID().equals(search.getArrivalAirportID()) &&
-                    flight.getDepartureDate().toString().equals(search.getDepartureDate().toString())
-            ) {
-                System.out.println(flight.toString());
-                result.add(flight);
 
-            }
-        }
-        System.out.println(result.toString());
-
-        return new SearchResult(result);
     }
 
     @Override
