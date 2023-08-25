@@ -56,7 +56,7 @@ public class FlightDataGenerator {
         Flight flight = new Flight();
 
 
-        flight.setDepartureAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(19)));
+        flight.setDepartureAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(20)));
         flight.setArrivalAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(20)));
         while (flight.getDepartureAirportID() == flight.getArrivalAirportID()) {
             flight.setArrivalAirportID(airportCodes.get(GetRandomInteger.getRandomInteger(20)));
@@ -65,6 +65,7 @@ public class FlightDataGenerator {
         flight.setDepartureDate(RandomDate.setRandomDepartureDateWithinNextWeek());
         flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
         while (!flight.getDepartureDate().before(flight.getReturnDate())) {
+            flight.setDepartureDate(RandomDate.setRandomDepartureDateWithinNextWeek());
             flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
         }
 
