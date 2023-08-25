@@ -12,5 +12,4 @@ public interface  ISearchService {
 
     SearchResult findFlights(Search search);
     SearchResult findOneWayFlights(Search search);
-    SearchResult findTwoWayFlights(Search search);
 }

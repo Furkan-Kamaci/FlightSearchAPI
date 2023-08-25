@@ -4,6 +4,7 @@ import com.furkankamaci.airport.FlightSearchApi.Business.IFlightService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -18,21 +19,12 @@ public class FlightController {
         this.flightManager = flightService;
     }
 
+
     @GetMapping("/findAll")
     public List<Flight> findAll() {
+        return flightManager.findAll();
 
-        CompletableFuture<List<Flight>> futureResult= flightManager.findAll();
-        try {
-            // Wait for the result of the asynchronous operation
-            List<Flight> result = futureResult.get();
-            // Now you can work with the result
-            return result;
-        } catch (InterruptedException | ExecutionException e) {
-            // Handle exceptions if necessary
-        }
-        return null;
     }
-
     @PostMapping("/addFlight")
     public Flight addFlight(@RequestBody Flight flight) {
         return flightManager.addFlight(flight);

@@ -15,10 +15,10 @@ public class FlightManager implements IFlightService {
     @Autowired
     private IFlightDal flightDal;
 
-    @Async
+
     @Override
-    public CompletableFuture<List<Flight>> findAll() {
-        return (CompletableFuture<List<Flight>>) flightDal.findAll();
+    public List<Flight> findAll() {
+        return flightDal.findAll();
     }
 
     @Override

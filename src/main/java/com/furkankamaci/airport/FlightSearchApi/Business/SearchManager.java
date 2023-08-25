@@ -55,8 +55,4 @@ public class SearchManager implements ISearchService {
         return new SearchResult(result);
     }
 
-    @Override
-    public SearchResult findTwoWayFlights(Search search) {
-        return null;
-    }
 }

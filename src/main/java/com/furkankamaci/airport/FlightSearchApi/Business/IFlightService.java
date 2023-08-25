@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public interface IFlightService {
 
-    CompletableFuture<List<Flight>> findAll();
+    List<Flight> findAll();
 
     Flight addFlight(Flight flight);
 
