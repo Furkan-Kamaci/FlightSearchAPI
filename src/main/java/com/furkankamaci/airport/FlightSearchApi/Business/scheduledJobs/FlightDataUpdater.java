@@ -27,7 +27,7 @@ public class FlightDataUpdater {
 
       List<Flight> newData= mockFlightController.getMockFlightInfo();
       for(Flight f : newData){
-          flightService.addFlight(f);
+          //flightService.addFlight(f);
       }
     }
 }
