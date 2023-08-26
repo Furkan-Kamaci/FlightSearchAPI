@@ -4,16 +4,20 @@ import com.furkankamaci.airport.FlightSearchApi.DataAccess.IFlightDal;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
 import com.furkankamaci.airport.FlightSearchApi.Entity.SearchResult;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SearchManager implements ISearchService {
 
     @Autowired
     private IFlightDal flightDal;
+
+    @Autowired
+    private IAirportService airportService;
 
     @Override
     public SearchResult findFlights(Search search) {
@@ -43,18 +47,15 @@ public class SearchManager implements ISearchService {
 
         for (Flight flight : allFlight) {
             if (
-                    flight.getDepartureAirportID().equals(search.getDepartureAirportID()) &&
-                            flight.getArrivalAirportID().equals(search.getArrivalAirportID()) &&
-                            flight
-                                    .getDepartureDate()
-                                    .toString()
-                                    .equals(search.getDepartureDate().toString())
+                    flight.getDepartureAirportID().equals(airportService.getIdByCity(search.getDepartureCity())) &&
+                            flight.getArrivalAirportID().equals((airportService.getIdByCity(search.getArrivalCity()))) &&
+                            flight.getDepartureDate().toString().equals(search.getDepartureDate().toString())
             ) {
-                System.out.println(flight.toString());
+                System.out.println(flight);
                 result.add(flight);
             }
         }
-        System.out.println(result.toString());
+        System.out.println(result);
 
         return new SearchResult(result);
     }

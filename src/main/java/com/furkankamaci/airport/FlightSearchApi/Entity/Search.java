@@ -5,25 +5,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Search {
 
-    private String departureAirportID;
-    private String arrivalAirportID;
+    private String departureCity;
+    private String arrivalCity;
     private Date departureDate;
     private Date returnDate;
 
     public void reverse() {
-        String temp = this.departureAirportID;
-        this.departureAirportID = this.arrivalAirportID;
-        this.arrivalAirportID = temp;
+        String  temp = this.departureCity;
+        this.departureCity = this.arrivalCity;
+        this.arrivalCity = temp;
 
         this.departureDate = this.returnDate;
         this.returnDate = null;
-
 
     }
 }

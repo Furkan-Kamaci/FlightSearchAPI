@@ -1,6 +1,8 @@
 package com.furkankamaci.airport.FlightSearchApi.Business;
 
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
+import org.hibernate.type.StringNVarcharType;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -14,4 +16,6 @@ public interface IAirportService {
   void deleteById(UUID id);
 
   Airport getById(UUID id);
+
+  UUID getIdByCity(String city);
 }
