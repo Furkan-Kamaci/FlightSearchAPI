@@ -3,6 +3,7 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 import com.furkankamaci.airport.FlightSearchApi.DataAccess.IAirportDal;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +29,12 @@ public class AirportManager implements IAirportService {
   }
 
   @Override
-  public void deleteById(int id) {
+  public void deleteById(UUID id) {
     airportDal.deleteById(id);
   }
 
   @Override
-  public Airport getById(int id) {
+  public Airport getById(UUID id) {
     return airportDal.findById(id).orElse(null);
   }
 }

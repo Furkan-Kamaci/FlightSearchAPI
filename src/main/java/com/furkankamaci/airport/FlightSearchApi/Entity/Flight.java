@@ -1,11 +1,13 @@
 package com.furkankamaci.airport.FlightSearchApi.Entity;
 
 import jakarta.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.sql.Date;
+import java.sql.Time;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -14,29 +16,29 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Flight {
 
-  @Id
-  @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-  @Column(name = "departure_airport_id")
-  private String departureAirportID;
+    @Column(name = "departure_airport_id")
+    private UUID departureAirportID;
 
-  @Column(name = "arrival_airport_id")
-  private String arrivalAirportID;
+    @Column(name = "arrival_airport_id")
+    private UUID arrivalAirportID;
 
-  @Column(name = "departure_date")
-  private Date departureDate;
+    @Column(name = "departure_date")
+    private Date departureDate;
 
-  @Column(name = "departure_hour")
-  private Time departureHour;
+    @Column(name = "departure_hour")
+    private Time departureHour;
 
-  @Column(name = "return_date")
-  private Date returnDate;
+    @Column(name = "return_date")
+    private Date returnDate;
 
-  @Column(name = "return_hour")
-  private Time returnHour;
+    @Column(name = "return_hour")
+    private Time returnHour;
 
-  @Column(name = "price")
-  private Double price;
+    @Column(name = "price")
+    private Double price;
 }
