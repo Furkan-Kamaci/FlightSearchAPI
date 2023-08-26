@@ -32,7 +32,7 @@ public class SearchController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
             @ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
 
-    @PostMapping("")
+    @GetMapping("")
     public SearchResult findOneWayFlights(@RequestBody Search search) {
         return searchService.findFlights(search);
     }

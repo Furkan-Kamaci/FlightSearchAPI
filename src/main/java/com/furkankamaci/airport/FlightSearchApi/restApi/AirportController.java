@@ -27,12 +27,12 @@ public class AirportController {
         return airportManager.addAirport(airport);
     }
 
-    @PostMapping("/updateAirport")
+    @PutMapping("/updateAirport")
     public Airport updateAirport(@RequestBody Airport airport) {
         return airportManager.updateAirport(airport);
     }
 
-    @GetMapping("/deleteAirportById/{id}")
+    @DeleteMapping("/deleteAirportById/{id}")
     public void deleteAirportById(@PathVariable UUID id) {
         airportManager.deleteById(id);
     }

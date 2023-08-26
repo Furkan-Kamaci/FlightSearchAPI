@@ -27,12 +27,12 @@ public class FlightController {
         return flightManager.addFlight(flight);
     }
 
-    @PostMapping("/updateFlight")
+    @PutMapping("/updateFlight")
     public Flight updateFlight(@RequestBody Flight flight) {
         return flightManager.updateFlight(flight);
     }
 
-    @GetMapping("/deleteFlightById/{id}")
+    @DeleteMapping("/deleteFlightById/{id}")
     public void deleteFlightById(@PathVariable UUID id) {
         flightManager.deleteById(id);
     }

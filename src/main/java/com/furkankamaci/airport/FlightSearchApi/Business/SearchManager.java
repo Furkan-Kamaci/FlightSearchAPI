@@ -45,14 +45,19 @@ public class SearchManager implements ISearchService {
         List<Flight> result = new ArrayList<>();
         List<Flight> allFlight = flightDal.findAll();
 
+        System.out.println(search.toString());
+
         for (Flight flight : allFlight) {
-            if (
-                    flight.getDepartureAirportID().equals(airportService.getIdByCity(search.getDepartureCity())) &&
-                            flight.getArrivalAirportID().equals((airportService.getIdByCity(search.getArrivalCity()))) &&
-                            flight.getDepartureDate().toString().equals(search.getDepartureDate().toString())
-            ) {
-                System.out.println(flight);
-                result.add(flight);
+            try {
+                if (
+                        flight.getDepartureAirportID().equals(airportService.getIdByCity(search.getDepartureCity())) &&
+                                flight.getArrivalAirportID().equals((airportService.getIdByCity(search.getArrivalCity()))) &&
+                                flight.getDepartureDate().toString().equals(search.getDepartureDate().toString())
+                ) {
+                    System.out.println(flight);
+                    result.add(flight);
+                }
+            } catch (Exception e) {
             }
         }
         System.out.println(result);
