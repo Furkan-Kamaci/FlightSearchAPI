@@ -17,9 +17,6 @@ import java.util.UUID;
 @Table(name = "airports")
 @NoArgsConstructor
 @AllArgsConstructor
-@TypeDefs({
-        @TypeDef(name = "uuid-char", typeClass = UUIDCharType.class)
-})
 public class Airport {
 
     @Id

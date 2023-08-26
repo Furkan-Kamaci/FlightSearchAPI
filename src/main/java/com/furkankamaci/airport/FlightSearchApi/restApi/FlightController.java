@@ -5,6 +5,7 @@ import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/flights")
@@ -32,12 +33,12 @@ public class FlightController {
     }
 
     @GetMapping("/deleteFlightById/{id}")
-    public void deleteFlightById(@PathVariable int id) {
+    public void deleteFlightById(@PathVariable UUID id) {
         flightManager.deleteById(id);
     }
 
     @GetMapping("/getFlightById/{id}")
-    public Flight getFlightById(@PathVariable int id) {
+    public Flight getFlightById(@PathVariable UUID id) {
         return flightManager.getById(id);
     }
 

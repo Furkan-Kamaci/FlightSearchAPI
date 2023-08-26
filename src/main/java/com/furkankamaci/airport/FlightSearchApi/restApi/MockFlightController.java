@@ -23,7 +23,7 @@ public class MockFlightController {
         //
         //flights.add(f);
         Flight ff = new Flight(
-                1,
+                UUID.fromString("ce32abc5-4423-11ee-83g0-38f33b91f0c3"),
                 UUID.fromString("ce32abc5-4423-11ee-83e0-38f3ab9130c3"), // JFK
                 UUID.fromString("ce32b58d-4423-11ee-83e0-38f3ab9130c3"), // LAX
                 Date.valueOf("2023-2-4"),

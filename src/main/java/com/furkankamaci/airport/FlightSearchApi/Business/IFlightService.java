@@ -3,6 +3,7 @@ package com.furkankamaci.airport.FlightSearchApi.Business;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface IFlightService {
     List<Flight> findAll();
@@ -11,7 +12,7 @@ public interface IFlightService {
 
     Flight updateFlight(Flight flight);
 
-    void deleteById(int id);
+    void deleteById(UUID id);
 
-    Flight getById(int id);
+    Flight getById(UUID id);
 }
