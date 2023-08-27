@@ -91,7 +91,7 @@ public class FlightController {
 
 
     @GetMapping("/getFlightById/{id}")
-    public Flight getFlightById(@Parameter(description = "id of a Flight to be get",
+    public Flight getFlightById(@Parameter(description = "id of a Flight to be get.",
             example = "0f8f4cad-97f7-46f2-8bb8-897f17dacefb") @PathVariable UUID id) {
         return flightManager.getById(id);
     }

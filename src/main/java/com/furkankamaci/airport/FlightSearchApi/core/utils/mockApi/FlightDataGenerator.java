@@ -56,7 +56,6 @@ public class FlightDataGenerator {
 
         flight.setPrice(RandomPrice.getRandomPrice(9.99, 99.99));
 
-        System.out.println(flight);
 
         return flight;
     }

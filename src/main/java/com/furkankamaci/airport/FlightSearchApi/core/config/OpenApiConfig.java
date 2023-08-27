@@ -29,17 +29,13 @@ public class OpenApiConfig {
         Contact contact = new Contact();
         contact.setEmail("kamacif@itu.edu.com");
         contact.setName("Furkan KAMACI");
-//        contact.setUrl("https://www.bezkoder.com");
 
-        License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
         Info info = new Info()
-                .title("Tutorial Management API")
-                .version("1.0")
+                .title("Amadeus Flight Search API")
+                .version("1.0.0")
                 .contact(contact)
-                .description("This API exposes endpoints to Flight Search API service.")
-//                .termsOfService("https://www.bezkoder.com/terms")
-                .license(mitLicense);
+                .description("This API exposes endpoints to Flight Search API service.");
 
         return new OpenAPI().info(info).servers(List.of(devServer));
     }
