@@ -3,10 +3,7 @@ package com.furkankamaci.airport.FlightSearchApi.core.utils.mockApi;
 import com.furkankamaci.airport.FlightSearchApi.Business.IAirportService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
-import com.furkankamaci.airport.FlightSearchApi.core.utils.random.GetRandomInteger;
-import com.furkankamaci.airport.FlightSearchApi.core.utils.random.RandomDate;
-import com.furkankamaci.airport.FlightSearchApi.core.utils.random.RandomPrice;
-import com.furkankamaci.airport.FlightSearchApi.core.utils.random.RandomTime;
+import com.furkankamaci.airport.FlightSearchApi.core.utils.random.*;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,23 +34,23 @@ public class FlightDataGenerator {
         Flight flight = new Flight();
 
 
-        flight.setDepartureAirportID(airportList.get(GetRandomInteger.getRandomInteger(15)).getId());
-        flight.setArrivalAirportID(airportList.get(GetRandomInteger.getRandomInteger(15)).getId());
+        flight.setDepartureAirportID(airportList.get(MockApiGenerator.getRandomInteger(15)).getId());
+        flight.setArrivalAirportID(airportList.get(MockApiGenerator.getRandomInteger(15)).getId());
         while (flight.getDepartureAirportID() == flight.getArrivalAirportID()) {
-            flight.setArrivalAirportID(airportList.get(GetRandomInteger.getRandomInteger(15)).getId());
+            flight.setArrivalAirportID(airportList.get(MockApiGenerator.getRandomInteger(15)).getId());
         }
 
-        flight.setDepartureDate(RandomDate.setRandomDepartureDateWithinNextWeek());
-        flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
+        flight.setDepartureDate(MockApiGenerator.setRandomDepartureDateWithinNextWeek());
+        flight.setReturnDate(MockApiGenerator.setRandomDepartureDateWithinNextWeek());
         while (!flight.getDepartureDate().before(flight.getReturnDate())) {
-            flight.setDepartureDate(RandomDate.setRandomDepartureDateWithinNextWeek());
-            flight.setReturnDate(RandomDate.setRandomDepartureDateWithinNextWeek());
+            flight.setDepartureDate(MockApiGenerator.setRandomDepartureDateWithinNextWeek());
+            flight.setReturnDate(MockApiGenerator.setRandomDepartureDateWithinNextWeek());
         }
 
-        flight.setDepartureHour(RandomTime.randomTime());
-        flight.setReturnHour(RandomTime.randomTime());
+        flight.setDepartureHour(MockApiGenerator.getRandomTime());
+        flight.setReturnHour(MockApiGenerator.getRandomTime());
 
-        flight.setPrice(RandomPrice.getRandomPrice(9.99, 99.99));
+        flight.setPrice(MockApiGenerator.getRandomPrice(9.99, 99.99));
 
 
         return flight;
