@@ -33,7 +33,6 @@ public class FlightDataGenerator {
 
         Flight flight = new Flight();
 
-
         flight.setDepartureAirportID(airportList.get(MockApiGenerator.getRandomInteger(15)).getId());
         flight.setArrivalAirportID(airportList.get(MockApiGenerator.getRandomInteger(15)).getId());
         while (flight.getDepartureAirportID() == flight.getArrivalAirportID()) {
@@ -51,7 +50,6 @@ public class FlightDataGenerator {
         flight.setReturnHour(MockApiGenerator.getRandomTime());
 
         flight.setPrice(MockApiGenerator.getRandomPrice(9.99, 99.99));
-
 
         return flight;
     }

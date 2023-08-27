@@ -23,7 +23,6 @@ public class FlightController {
         this.flightManager = flightService;
     }
 
-
     @GetMapping("/findAll")
     public List<Flight> findAll() {
         return flightManager.findAll();
@@ -43,7 +42,6 @@ public class FlightController {
     public Flight addFlight(@RequestBody Flight flight) {
         return flightManager.addFlight(flight);
     }
-
 
     @Operation(
             summary = "Update Flight endpoint",
@@ -74,7 +72,6 @@ public class FlightController {
             example = "0f8f4cad-97f7-46f2-8bb8-897f17dacefb") @PathVariable UUID id) {
         return flightManager.getById(id);
     }
-
 
     @Operation(
             summary = "isAvailable Check")

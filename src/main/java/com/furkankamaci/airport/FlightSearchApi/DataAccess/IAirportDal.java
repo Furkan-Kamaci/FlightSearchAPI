@@ -2,7 +2,6 @@ package com.furkankamaci.airport.FlightSearchApi.DataAccess;
 
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;

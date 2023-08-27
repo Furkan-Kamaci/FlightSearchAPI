@@ -23,6 +23,5 @@ public class Search {
 
         this.departureDate = this.returnDate;
         this.returnDate = null;
-
     }
 }

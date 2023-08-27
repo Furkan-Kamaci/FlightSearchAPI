@@ -2,7 +2,6 @@ package com.furkankamaci.airport.FlightSearchApi.core.utils.swaggerUtils.constan
 
 public class FlightControllerConstants {
 
-
     public static final String ADD_FLIGHT_OBJECT_EXAMPLE_VALUE = "{\n" +
             "    \"departureAirportID\": \"b77ff8cd-442b-11ee-83e0-38f3ab9130c3\",\n" +
             "    \"arrivalAirportID\": \"b78002fb-442b-11ee-83e0-38f3ab9130c3\",\n" +
@@ -12,7 +11,6 @@ public class FlightControllerConstants {
             "    \"returnHour\": \"09:00:00\",\n" +
             "    \"price\": 35.50\n" +
             "}";
-
 
     public static final String UPDATE_FLIGHT_OBJECT_EXAMPLE_VALUE =
             "{\n" +

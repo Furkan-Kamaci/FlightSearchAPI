@@ -17,18 +17,15 @@ public class OpenApiConfig {
     @Value("${furkan.openapi.dev-url}")
     private String devUrl;
 
-
     @Bean
     public OpenAPI myOpenAPI() {
         Server devServer = new Server();
         devServer.setUrl(devUrl);
         devServer.setDescription("Server URL in Development environment");
 
-
         Contact contact = new Contact();
         contact.setEmail("kamacif@itu.edu.com");
         contact.setName("Furkan KAMACI");
-
 
         Info info = new Info()
                 .title("Amadeus Flight Search API")
