@@ -22,7 +22,6 @@ public class FlightDataUpdater {
     //    @Scheduled(cron= "0 0 0 * * *") // every day at midnight
     @Scheduled(cron = "*/5 * * * * *") // every 5 sec
     public void updateFlightData() {
-        System.out.println("new flights added..");
 
         List<Flight> newData = FlightDataGenerator.getRandomFlights(airportService.findAll());
         for (Flight f : newData) {
@@ -32,5 +31,6 @@ public class FlightDataUpdater {
                 System.out.println(e);
             }
         }
+        System.out.println("new flights added..");
     }
 }
