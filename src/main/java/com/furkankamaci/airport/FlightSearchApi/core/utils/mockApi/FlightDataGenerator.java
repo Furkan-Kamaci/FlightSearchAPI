@@ -1,6 +1,5 @@
 package com.furkankamaci.airport.FlightSearchApi.core.utils.mockApi;
 
-import com.furkankamaci.airport.FlightSearchApi.Business.AirportManager;
 import com.furkankamaci.airport.FlightSearchApi.Business.IAirportService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Airport;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;

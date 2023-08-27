@@ -19,8 +19,8 @@ public class FlightDataUpdater {
     @Autowired
     IAirportService airportService;
 
-    //    @Scheduled(cron= "0 0 0 * * *") // hergun gece yarisinda
-    @Scheduled(cron = "*/5 * * * * *") // her saniye
+    //    @Scheduled(cron= "0 0 0 * * *") // every day at midnight
+    @Scheduled(cron = "*/5 * * * * *") // every 5 sec
     public void updateFlightData() {
         System.out.println("new flights added..");
 

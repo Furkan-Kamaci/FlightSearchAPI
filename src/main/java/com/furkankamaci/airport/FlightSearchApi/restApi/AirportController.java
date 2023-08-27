@@ -80,7 +80,6 @@ public class AirportController {
     public Airport getAirportById(@Parameter(description = "id of an Airport to be get",
             example = "b7800334-442b-11ee-83e0-38f3ab9130c3") @PathVariable UUID id) {
         System.out.println(id);
-//        return airportManager.getById(UUID.fromString(id));
         return airportManager.getById(id);
     }
 

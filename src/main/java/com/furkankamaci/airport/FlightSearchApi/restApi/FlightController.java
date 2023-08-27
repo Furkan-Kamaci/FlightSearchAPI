@@ -2,7 +2,6 @@ package com.furkankamaci.airport.FlightSearchApi.restApi;
 
 import com.furkankamaci.airport.FlightSearchApi.Business.IFlightService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
-import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -31,7 +30,6 @@ public class FlightController {
 
     @Operation(
             summary = "Add Flight endpoint",
-//            description = "Add ",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "",
                     content = @Content(
                             mediaType = "application/json",

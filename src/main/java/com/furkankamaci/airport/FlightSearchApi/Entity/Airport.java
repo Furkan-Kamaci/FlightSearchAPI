@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.*;
 import org.hibernate.type.SqlTypes;
-import org.hibernate.type.UUIDCharType;
 
 import java.util.UUID;
 
@@ -30,27 +29,5 @@ public class Airport {
 
     @Column(name = "city")
     private String city;
-    //
-    //
-    //    public Airport(String airportCode, String city) {
-    //        this.airportCode = airportCode;
-    //        this.city = city;
-    //    }
-    //    public Airport() {}
-    //
-    //    public String getAirportCode() {
-    //        return airportCode;
-    //    }
-    //
-    //    public void setAirportCode(String airportCode) {
-    //        this.airportCode = airportCode;
-    //    }
-    //
-    //    public String getCity() {
-    //        return city;
-    //    }
-    //
-    //    public void setCity(String city) {
-    //        this.city = city;
-    //    }
+
 }

@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -18,7 +17,7 @@ public class Search {
     private Date returnDate;
 
     public void reverse() {
-        String  temp = this.departureCity;
+        String temp = this.departureCity;
         this.departureCity = this.arrivalCity;
         this.arrivalCity = temp;
 
