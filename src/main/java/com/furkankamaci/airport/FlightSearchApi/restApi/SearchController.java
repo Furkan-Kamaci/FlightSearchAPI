@@ -4,6 +4,7 @@ import com.furkankamaci.airport.FlightSearchApi.Business.ISearchService;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Flight;
 import com.furkankamaci.airport.FlightSearchApi.Entity.Search;
 import com.furkankamaci.airport.FlightSearchApi.Entity.SearchResult;
+
 import java.util.List;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,13 +25,13 @@ public class SearchController {
     private ISearchService searchService;
 
     @Operation(
-            summary = "Search entpoitns ",
+            summary = "Search endpoints",
             description = "Get a Tutorial object by specifying its id. The response is Tutorial object with id, title, description and published status.",
-            tags = { "tutorials", "get" })
+            tags = {"tutorials", "get"})
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = SearchController.class), mediaType = "application/json") }),
-            @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
-            @ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
+            @ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = SearchController.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", content = {@Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
 
     @GetMapping("")
     public SearchResult findOneWayFlights(@RequestBody Search search) {
