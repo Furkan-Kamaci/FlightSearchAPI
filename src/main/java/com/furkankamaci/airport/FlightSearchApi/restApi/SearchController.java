@@ -25,26 +25,35 @@ public class SearchController {
     private ISearchService searchService;
 
     @Operation(
-            summary = "Search endpoints",
-            description = "Get a Tutorial object by specifying its id. The response is Tutorial object with id, title, description and published status.",
-            tags = {"tutorials", "get"},
+            summary = "Search endpoint",
+            description = "Retrieves a suitable flight based on the provided parameters. For return Flight informations include returnDate as well",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "This is the request body",
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = Search.class),
-                            examples = {@ExampleObject(value =
+                            examples = @ExampleObject(value =
                                     "{\n" +
                                             "    \"departureCity\": \"Dallas\",\n" +
                                             "    \"arrivalCity\": \"Denver\",\n" +
                                             "    \"departureDate\": \"2023-08-30\",\n" +  // Comma added here
                                             "    \"returnDate\": null\n" +
                                             "}")
-                            }
+
                     )
             )
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = SearchController.class), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = SearchController.class),
+                    mediaType = "application/json",
+                    examples = @ExampleObject(value =
+                            "{\n" +
+                                    "    \"departureCity\": \"Denver\",\n" +
+                                    "    \"arrivalCity\": \"Dallas\",\n" +
+                                    "    \"departureDate\": \"2023-08-29\",\n" +
+                                    "    \"returnDate\": \"2023-09-03\"\n" +
+                                    "}")
+
+            )}),
             @ApiResponse(responseCode = "404", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", content = {@Content(schema = @Schema())})})
 
