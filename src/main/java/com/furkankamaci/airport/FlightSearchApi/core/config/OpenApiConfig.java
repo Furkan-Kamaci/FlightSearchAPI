@@ -13,13 +13,11 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.servers.Server;
 
 @Configuration
-public class OpenAPIConfig {
+public class OpenApiConfig {
 
-    @Value("${bezkoder.openapi.dev-url}")
+    @Value("${furkan.openapi.dev-url}")
     private String devUrl;
 
-    @Value("${bezkoder.openapi.prod-url}")
-    private String prodUrl;
 
     @Bean
     public OpenAPI myOpenAPI() {
@@ -27,9 +25,6 @@ public class OpenAPIConfig {
         devServer.setUrl(devUrl);
         devServer.setDescription("Server URL in Development environment");
 
-        Server prodServer = new Server();
-        prodServer.setUrl(prodUrl);
-        prodServer.setDescription("Server URL in Production environment");
 
         Contact contact = new Contact();
         contact.setEmail("kamacif@itu.edu.com");
@@ -46,6 +41,6 @@ public class OpenAPIConfig {
 //                .termsOfService("https://www.bezkoder.com/terms")
                 .license(mitLicense);
 
-        return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+        return new OpenAPI().info(info).servers(List.of(devServer));
     }
 }
