@@ -30,19 +30,31 @@ Follow these steps to set up and run the Spring Boot backend API on your local m
 git clone https://github.com/Furkan-Kamaci/FlightSearchAPI.git
 ```
 
-2. **Navigate to Project Directory**: Move into the cloned directory:
+2. **Database Configuration**: The [application.properties](https://github.com/Furkan-Kamaci/FlightSearchAPI/blob/main/src/main/resources/application.properties) file contains the database parameters:
+
+``` 
+MYSQL_PORT:3306
+MYSQL_USER:root
+MYSQL_PASSWORD:1234
+```
+
+Feel free to modify these parameters as needed.
+
+3. **Prepare the Database**: Execute the script located at 
+   [mysqlScripts/initializeDatabase.sql](https://github.com/Furkan-Kamaci/FlightSearchAPI/blob/main/mysqlScripts/initializeDatabase.sql)
+
+
+4. **Navigate to Project Directory**: Move into the cloned directory:
 
 ```.sh
 cd FlightSearchAPI
 ```
 
-3. **Configure Database**: Set up your preferred database configuration in application.properties.
-   
-4. **Run the Application**: Launch the Spring Boot application with:
+6. **Run the Application**: Open a terminal/command prompt, navigate to the project directory, and then launch the Spring Boot application using the following command:
 ```.sh
 mvnw spring-boot:run
 ```
-5. **Explore Endpoints**: Utilize tools like Postman or cURL or Swagger to interact with the API's endpoints. Refer to the detailed documentation below for endpoint information and request formats.
+7. **Explore API Endpoints**: Utilize tools like Postman or cURL or Swagger to interact with the API's endpoints. Refer to the detailed documentation below for endpoint information and request formats.
 
 # API Documentation
 For comprehensive information about available endpoints, request and response formats, authentication, and more, please refer to our Swagger API documentation.
