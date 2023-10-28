@@ -26,11 +26,12 @@ public class FlightDataUpdater {
         List<Flight> newData = FlightDataGenerator.getRandomFlights(airportService.findAll());
         for (Flight f : newData) {
             try {
-                flightService.addFlight(f);
+//                flightService.addFlight(f);
             } catch (Exception e) {
                 System.out.println(e);
             }
         }
-        System.out.println("new flights added..");
+//        System.out.println("new flights added..");
+        System.out.println("new flights added operation is suspended..");
     }
 }
