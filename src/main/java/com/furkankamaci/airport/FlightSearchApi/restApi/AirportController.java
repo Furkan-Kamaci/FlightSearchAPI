@@ -80,4 +80,10 @@ public class AirportController {
     public String availableCheck() {
         return "Airport API is available";
     }
+
+    @GetMapping("/getAirportByCity/{city}")
+    public Airport getAirportByCity(@PathVariable String city) {
+        Airport airport =  airportManager.getAirportByCity(city);
+        return airport;
+    }
 }

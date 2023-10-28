@@ -40,13 +40,25 @@ public class AirportManager implements IAirportService {
     }
 
     @Override
-    public UUID getIdByCity(String city) {
+    public Airport getAirportByCity(String city) {
         List<Airport> airportList = this.findAll();
 
-        for(Airport a : airportList){
-          if (a.getCity().equals(city)) return a.getId();
+        for (Airport a : airportList) {
+            if (a.getCity().equals(city)) return a;
         }
 
         return null;
     }
+
+    @Override
+    public UUID getIdByCity(String city) {
+        List<Airport> airportList = this.findAll();
+
+        for (Airport a : airportList) {
+            if (a.getCity().equals(city)) return a.getId();
+        }
+
+        return null;
+    }
+
 }

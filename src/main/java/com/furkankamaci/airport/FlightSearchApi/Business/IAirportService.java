@@ -15,6 +15,7 @@ public interface IAirportService {
     void deleteById(UUID id);
 
     Airport getById(UUID id);
+    Airport getAirportByCity(String city);
 
     UUID getIdByCity(String city);
 }
